@@ -10,39 +10,38 @@
 
 **GPML的特性:**
 
-​       1.预测是对观察值的插值
+1.预测是对观察值的插值
 
-​       2.预测是带有概率的(Gaussian)。所以可以用来计算经验置信区间和超越概率以便对感兴趣的区域重新拟合（在线拟合，自适应拟合）预测。
+2.预测是带有概率的(Gaussian)。所以可以用来计算经验置信区间和超越概率以便对感兴趣的区域重新拟合（在线拟合，自适应拟合）预测。
 
-​       3.多样性: 可以指定不同的线性回归模型 linear regression models 和相关模型 correlation models 。
+3.多样性: 可以指定不同的线性回归模型 linear regression models 和相关模型 correlation models 。
 
 **GPML的缺点:**
 
-​       1.不是稀疏的，它使用全部的样本/特征信息来做预测。
+1.不是稀疏的，它使用全部的样本/特征信息来做预测。
 
-​       2.多维空间下会变得低效 – 即当特征的数量超过几十个,它可能确实会表现很差，而且计算效率下降。
+2.多维空间下会变得低效 – 即当特征的数量超过几十个,它可能确实会表现很差，而且计算效率下降。
 
-​       3.分类只是一个后处理过程, 意味着要建模， 首先需要提供试验的完整浮点精度标量输出 y 来解决回归问题。
+3.分类只是一个后处理过程, 意味着要建模， 首先需要提供试验的完整浮点精度标量输出 y 来解决回归问题。
 
 **2.高斯分布和高斯过程拟合实现**
 
 高斯分布-python实现（Gaussian_Distribution_Axes3D.py）
 
-图1
+<img src="https://github.com/jm199504/Gaussian-Processes/blob/master/images/1.png">
 
 高斯过程拟合实现：均值设为0，标准差为1（Gaussian_Processes.py）
 
 使用GP拟合 x * (np.log(x+1) - np.cos(x) )：
 
-图2
+<img src="https://github.com/jm199504/Gaussian-Processes/blob/master/images/2.png">
 
 使用GP拟合np.power(x,3) + 3\*x：
 
-图3
+<img src="https://github.com/jm199504/Gaussian-Processes/blob/master/images/3.png">
 
 使用GP拟合x*sin(x)，
 
-图4
+<img src="https://github.com/jm199504/Gaussian-Processes/blob/master/images/4.png">
 
-其中左图来源http://sklearn.lzjqsdd.com；右图个人绘制生成。
-
+其中左图来源<http://sklearn.lzjqsdd.com>,右图个人绘制生成。
